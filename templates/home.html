@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <div>
-    <nav class="section-box">
-        <div></div>
-        <div></div>
-        <div></div>
-    </nav>
-    <div class="section info">
+    <div class="section-box-horizontal">
+        <div class="navbar-item"><a class="navlink" href="">a</a></div>
+        <div class="navbar-item"><a class="navlink" href="">a</a></div>
+        <div class="navbar-item"><a class="navlink" href="">a</a></div>
+    </div>
+    <br>
+    <div class="section-box-horizontal info">
         <div>
             <h2>Calculate your Total</h2>
         </div>
@@ -17,7 +18,7 @@
             </form>
         </div>
     </div>
-    <div class="section">
+    <div class="section-box adding">
         <h2>+</h2>
     </div>
 </div>
@@ -25,9 +26,6 @@
 
 </script>
 <style>
-    .section{
-        width: 980px;
-        background-color: gray;
-    }
+
 </style>
 {% endblock %}

@@ -1,5 +1,4 @@
 
-
 .bng{
     width: 100%; height:100%; position: fixed; left: 0px; top: 0px; z-index: -1;
     background-size: 100%;
@@ -24,13 +23,12 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
-.nav-bng{
-    width: 100%; height:100%; position: absolute; left: 0px; top: 0px; z-index: -1;
-    background-color:white;
-    opacity: 65%;
+.section-box-horizontal{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 .selected{
     background-color:white;
@@ -40,9 +38,10 @@
     color:black; position:absolute; display:inline-block; width:33%; height:100%; padding-top: 12px
 }
 .navbar-item{
-    width: 35%;
+    width: 33%;
     height: 50px;
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -92,5 +91,10 @@ body{
     transform: translate(-5.5px, 0);
     -webkit-appearance: none;
     appearance: none;
+}
+
+.adding{
+    height: 75px;
+    background-color: gray;
 }
 
