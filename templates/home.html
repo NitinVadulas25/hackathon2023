@@ -1,31 +1,195 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
+
+<div class="content">
+    <!-- nav bar -->
+    <div>
+        <nav class="section-box-horizontal">
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/">Carbon Emission Calculator</a>
+            </div>
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="">Individual Contribution</a>
+            </div>
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/volunteer">Volunteer and Petition</a>
+            </div>
+        </nav>
+    </div>
+    <!-- image 1 slide -->
     <div class="section-box-horizontal">
-        <div class="navbar-item"><a class="navlink" href="">a</a></div>
-        <div class="navbar-item"><a class="navlink" href="">a</a></div>
-        <div class="navbar-item"><a class="navlink" href="">a</a></div>
+        <div style="width:48%; height: 300px;" class="center"> 
+            <h2 class="fontsize3 bold">Calculate your Carbon Emissions</h2>
+        </div>
+        <div style="width:50%; height: 300px;" class="image1"> 
+        </div>
     </div>
     <br>
-    <div class="section-box-horizontal info">
-        <div>
-            <h2>Calculate your Total</h2>
+    <!-- learn about carbon emissions -->
+    <div style="height: 200px; background-color: black; color:white;" class="section-box">
+        <h2 class="fontsize2 bold">Learn about how you can reduce your carbon emissions.</h2>
+    </div>
+    <br>
+    <!-- image 2 slide -->
+    <div class="section-box-horizontal">
+        <div style="width:50%; height: 650px;" class="image2"> 
         </div>
+        <div style="width:50%; height: 650px;" class="section-box"> 
+            <h2 class="fontsize3 bold">What is a Carbon Footprint?</h2>
+            <h2 class="fontsize2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem voluptate possimus sed in iure suscipit, animi aperiam quis id dolores aspernatur nulla vel modi sapiente deserunt accusamus error dignissimos sit fugit delectus quisquam quod? Odio error sunt doloremque. Cupiditate quidem consectetur voluptates corrupti eum sequi corporis, dolore itaque tempora voluptas?</h2>
+        </div>
+    </div>
+    <br>
+    <div class="section-box" style="height: 200px; background-color: #04AA6D; color:rgb(255, 255, 255);">
+        <h2 class="font3">Based on this simple survey of your lifestyle, we can estimate your carbon emissions.</h2>
+    </div>
+    <br>
+    <!-- carbon emissions zip code -->
+    <div class="section-box-horizontal info center">
+        <div class="divleft">
+            <h2 class="fontsize2 bold">Calculate your Total</h2>
+        </div>
+        <div class="rightspace"></div>
         <div>
-            <form action="">
-                <label for="zip">Enter Zip Code</label>
-                <input name="zip" id-"zip" type="text">
+            <form class="divright center" action="">
+                <label for="zip" class="fontsize2">Enter Zip Code</label>
+                <div style="width:15px"></div>
+                <input class="zip-input" name="zip" id-"zip" type="text">
             </form>
         </div>
     </div>
-    <div class="section-box adding">
-        <h2>+</h2>
+    <br>
+    <!-- carbon emissions form -->
+    <form id="carbon-select" action="">
+        <div id="oil-emm">
+            <div class="section-box-horizontal adding right center">
+                <h2 class="divleft">Monthly Oil Bill</h2>
+                <div style="width:15px"></div>
+                <input class="form-input" id="oil-inp" type="number">
+            </div>
+        </div>
+        <div id="electric-emm">
+            <div class="section-box-horizontal adding right center">
+                <h2 class="divleft">Monthly Electricity Bill</h2>
+                <div style="width:15px"></div>
+                <input class="form-input" id="electric-inp" type="number">
+            </div>
+        </div>
+        <div id="gas-emm">
+            <div class="section-box-horizontal adding right center">
+                <h2 class="divleft">Monthly Gas Bill</h2>
+                <div style="width:15px"></div>
+                <input class="form-input" id="gas-inp" type="number">
+            </div>
+        </div>
+        <div id="mileage-emm">
+            <div class="section-box-horizontal adding right center">
+                <h2 class="divleft">Yearly Milage</h2>
+                <div style="width:15px"></div>
+                <input class="form-input" id="mileage-inp" type="number">
+            </div>
+        </div>
+        <div id="paper-emm">
+            <div class="section-box-horizontal adding right center">
+                <h2 class="divleft">Do you recycle paper?</h2>
+                <div style="width:15px"></div>
+                <input class="border-rad radio-input" type="radio" id="true1" name="paper" value="true" checked> 
+                <label style="padding: 5px 2% 0px 2%;" class='fontsize1' for="true1">Yes</label>
+                <input class="border-rad radio-input" type="radio" id="false1" name="paper" value="false">
+                <label style="padding: 1px 2% 0px 2%;" class='fontsize1' for="false1">No</label>
+            </div>
+        </div>
+        <div id="aluminum-emm">
+            <div class="section-box-horizontal adding center">
+                <h2 class="divleft">Do you recycle aluminum?</h2>
+                <div style="width:15px"></div>
+                <input class="border-rad radio-input" type="radio" id="true" name="aluminum" value="true" checked> 
+                <label style="padding: 5px 2% 0px 2%;" class='fontsize1' for="true">Yes</label>
+                <input class="border-rad radio-input " type="radio" id="false" name="aluminum" value="false">
+                <label style="padding: 1px 2% 0px 2%;" class='fontsize1' for="false">No</label>
+            </div>
+        </div>
+        <!-- submit -->
+        <div class="section-box-horizontal adding">
+            <button class="button" type="submit">Submit</button>
+        </div>
+    </form>
+    <br>
+    <!-- total -->
+    <div class="section-box-horizontal center">
+        <h2 class="fontsize2 bold">TOTAL: </h2>
+        <h2 class="fontsize2"> 123123</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="section-box">
+        <h2 class="fontsize3 bold">Average Carbon Emissions in San Jose</h2>
     </div>
 </div>
+<div>
+    <canvas id="myChart"></canvas>
+  </div>
+  
+  <div>
+    <canvas id="myChart"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    const options = {
+        plugins: {
+            colors: {
+                enabled: true
+            }
+        }
+    }
+  
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February',
+    'March'],
+        datasets: [{
+          fill: true,
+          label: 'Pounds Per Year',
+          data: [16000, 17500, 18000, 18245, 19000, 20000, 19784, 18500, 17203, 15389, 14938, 13043],
+          borderColor: '#a798e3',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+            x: {
+                grid: {
+                    drawOnChartArea: false
+                }
+            },
+            y: {
+                beginAtZero: true,
+                grid: {
+                    drawOnChartArea: false
+                }
+          }
+        }
+      }
+    });
+  </script>
+  
 <script>
-
+    let f = document.getElementById("carbon-select")
+    f.addEventListener("submit", (e) => {
+        e.preventDefault();
+        carb = document.getElementById("carbon").value;
+        const dict = {"gas": document.getElementById("gas-emm"), 
+        "mileage": document.getElementById("mileage-emm"), 
+        "paper": document.getElementById("paper-emm"), 
+        "aluminum": document.getElementById("aluminum-emm"),}
+        
+    })
 </script>
-<style>
 
-</style>
 {% endblock %}

@@ -7,6 +7,11 @@ def asfhjasfh():
     return render_template("home.html")
 
 
-@views.route('/goober', methods=["GET", "POST"])
+@views.route('/volunteer', methods=["GET", "POST"])
 def hfhs():
-    return render_template("base2.html")
+    return render_template("volunteer.html")
+
+
+@views.route('/create-volunteer', methods=["GET", "POST"])
+def jack():
+    return render_template("create-volunteer.html")

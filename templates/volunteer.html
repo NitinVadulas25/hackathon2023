@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block content3 %} 
+<div class="content">
+    <!-- nav bar -->
+    <div>
+        <nav class="section-box-horizontal">
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/">Carbon Emission Calculator</a>
+            </div>
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="">Individual Contribution</a>
+            </div>
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/volunteer">Volunteer and Petition</a>
+            </div>
+        </nav>
+    </div>
+    <!-- image 1 slide -->
+    <div class="section-box-horizontal">
+        <div style="width:50%; height: 300px;" class="image1"> 
+        </div>
+        <div style="width:48%; height: 300px;" class="center"> 
+            <h2 class="fontsize3 bold">Help out in your community</h2>
+        </div>
+    </div>
+    <br>
+    <!-- learn about carbon emissions -->
+    <div style="height: 100px; background-color: black; color:white;" class="section-box">
+        <h2 class="fontsize2 bold">Find opportunities near you.</h2>
+    </div>
+    <br>
+    <a href="/create-volunteer">
+        <button type="submit" class="btn btn-primary">Create your own volunteer posting</button>
+    </a>
+
+
+</div>
+{% endblock %}
