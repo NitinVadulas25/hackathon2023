@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <div>
-    <div class="section-box-horizontal">
-        <div class="navbar-item"><a class="navlink" href="">a</a></div>
-        <div class="navbar-item"><a class="navlink" href="">a</a></div>
-        <div class="navbar-item"><a class="navlink" href="">a</a></div>
+    <div class ="section-box-horizontal">
+        <div class="navbar-item"><a class="navlink" href="">Homepage</a></div>
+        <div class="navbar-item"><a class="navlink" href="">Individual Contribution</a></div>
+        <div class="navbar-item"><a class="navlink" href="">Volunteering & Petition </a></div>
     </div>
+    
     <br>
     <div class="section-box-horizontal info">
         <div>
@@ -26,6 +27,13 @@
 
 </script>
 <style>
+    .section-box-horizontal{
+        position: absolute;
+        height: 50px;
+        width: 800px;
+        z-index: 1;
+
+    }
 
 </style>
 {% endblock %}

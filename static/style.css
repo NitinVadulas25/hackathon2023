@@ -24,6 +24,34 @@
     flex-direction: column;
     text-align: center;
 }
+.navigationbar{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    width: 800px;
+    
+}
+.title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+.zip{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+.types-carbon{
+    width: 370px;
+    /* border: 1.5px solid black; */
+
+}
 .section-box-horizontal{
     position: relative;
     display: flex;
@@ -94,7 +122,15 @@ body{
 }
 
 .adding{
+    width: 1125px;
     height: 75px;
     background-color: gray;
 }
-
+.typesparent{
+    float: left;
+    clear: none;
+}
+.plus{
+    width: 30px;
+    height: 30px;
+}

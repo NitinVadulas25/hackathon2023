@@ -4,7 +4,7 @@ views = Blueprint('views', __name__)
 
 @views.route('/', methods=["GET", "POST"])
 def asfhjasfh():
-    return render_template("home.html")
+    return render_template("indCont.html")
 
 
 @views.route('/goober', methods=["GET", "POST"])
