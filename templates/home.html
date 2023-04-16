@@ -1,16 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 <div>
-    <nav>
+    <nav class="section-box">
         <div></div>
         <div></div>
         <div></div>
     </nav>
-    <div class="info">
-
+    <div class="section info">
+        <div>
+            <h2>Calculate your Total</h2>
+        </div>
+        <div>
+            <form action="">
+                <label for="zip">Enter Zip Code</label>
+                <input name="zip" id-"zip" type="text">
+            </form>
+        </div>
     </div>
-    <div class="zipcode">
-
+    <div class="section">
+        <h2>+</h2>
     </div>
 </div>
+<script>
+
+</script>
+<style>
+    .section{
+        width: 980px;
+        background-color: gray;
+    }
+</style>
 {% endblock %}
