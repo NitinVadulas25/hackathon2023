@@ -1,0 +1,313 @@
+{% extends "base.html" %} 
+{% block content2 %} 
+<div class="content">
+    <!-- nav bar -->
+    <div>
+        <nav class="section-box-horizontal">
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/">Carbon Emission Calculator</a>
+            </div>
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/contributions">Individual Contribution</a>
+            </div>
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/volunteer">Volunteer and Petition</a>
+            </div>
+        </nav>
+    </div>
+
+</div>
+<div class = "center"><h2><b>Pounds Of Emission</b></h2></div>
+    
+        <div class="center">
+            <p>user id: </p>
+            <div style="width:10px"></div>
+            <input class="form-input" id="email" type="email">
+        </div>
+  
+    
+    <canvas id="myChart" width="300" height="200"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    const options = {
+        plugins: {
+            colors: {
+                enabled: true
+            }
+        }
+    }
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February',
+    'March'],
+        datasets: [{
+          data: [23560, 25458, 26483, 24869, 23582, 23485, 22484, 20374, 19372, 17389, 16392, 14839],
+          borderColor: '#36A2EB',
+          borderWidth: 1,
+          backgroundColor: [
+            '#ff0000',
+            '#ff8000',
+            '#ffff00',
+            '#80ff00',
+            '#00ff00',
+            '#00ff80',
+            '#00ffff',
+            '#0080ff',
+            '#0000ff',
+            '#8000ff',
+            '#ff00ff',
+            '#ff0080'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem) {
+                    return tooltipItem.yLabel;
+                }
+            }
+        },
+        scales: {
+            x: {
+                grid: {
+                    drawOnChartArea: false
+                }
+            },
+            y: {
+                beginAtZero: true,
+                grid: {
+                    drawOnChartArea: false
+                }
+          }
+        }
+      }
+    });
+  </script>
+<div>
+    <!-- // const options = {
+    //     plugins: {
+    //         colors: {
+    //             enabled: true
+    //         }
+    //     }
+    // }
+
+
+    // function start(){
+    //   const email = document.getElementById("email");
+    //   const ctx = document.getElementById('myChart');
+    //   var date_list = JSON.parse(localStorage.getItem("date_list"));
+    //   var months = JSON.parse(localStorage.getItem("months"));
+      
+    //   new Chart(ctx, {
+    //   type: 'bar',
+    //   data: {
+    //     labels: [months[0], months[1], months[2], months[3], months[4], months[5], months[6], months[7], months[8], months[9], months[10],
+    //     months[11]],
+    //     datasets: [{
+    //       data: [localStorage.getItem(date_list[0]+ "total" + email),
+    //       localStorage.getItem(date_list[1]+ "total" + email),
+    //       localStorage.getItem(date_list[2]+ "total" + email),
+    //       localStorage.getItem(date_list[3]+ "total" + email),
+    //       localStorage.getItem(date_list[4]+ "total" + email),
+    //       localStorage.getItem(date_list[5]+ "total" + email),
+    //       localStorage.getItem(date_list[6]+ "total" + email),
+    //       localStorage.getItem(date_list[7]+ "total" + email),
+    //       localStorage.getItem(date_list[8]+ "total" + email),
+    //       localStorage.getItem(date_list[9]+ "total" + email),
+    //       localStorage.getItem(date_list[10]+ "total" + email),
+    //       localStorage.getItem(date_list[11]+ "total" + email)],
+    //       borderColor: '#36A2EB',
+    //       borderWidth: 1,
+    //       backgroundColor: [
+    //         '#ff0000',
+    //         '#ff8000',
+    //         '#ffff00',
+    //         '#80ff00',
+    //         '#00ff00',
+    //         '#00ff80',
+    //         '#00ffff',
+    //         '#0080ff',
+    //         '#0000ff',
+    //         '#8000ff',
+    //         '#ff00ff',
+    //         '#ff0080'
+    //       ]
+    //     }]
+    //   },
+    //   options: {
+    //     plugins: {
+    //         legend: {
+    //             display: false
+    //         }
+    //     },
+    //     tooltips: {
+    //         callbacks: {
+    //             label: function(tooltipItem) {
+    //                 return tooltipItem.yLabel;
+    //             }
+    //         }
+    //     },
+    //     scales: {
+    //         x: {
+    //             grid: {
+    //                 drawOnChartArea: false
+    //             }
+    //         },
+    //         y: {
+    //             beginAtZero: true,
+    //             grid: {
+    //                 drawOnChartArea: false
+    //             }
+    //       }
+    //     }
+    //   }
+    // });
+
+    // } -->
+  
+  </script>
+<div>
+    
+    
+    <br>
+
+    <div class="center title">
+        <h2>Your Carbon Emissions</h2>
+    </div>
+
+
+    
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .collapsible {
+      background-color: #596E5C;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+    
+    .active, .collapsible:hover {
+      background-color: #596E5C;
+    }
+    
+    .collapsible:after {
+      content: '\002B';
+      color: white;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+    
+    .active:after {
+      content: "\2212";
+    }
+    
+    .content2 {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background-color: #f1f1f1;
+    }
+    </style>
+    </head>
+    <body>
+    
+  
+    
+   
+    <button class="collapsible">Electric Bill</button>
+    <div class="content2">
+      <p>Reducing your energy consumption by limiting usage of lights when it is unnecessary helps reduce your energy bill and thus your carbon footprint.</p>
+    </div>
+
+    <button class="collapsible">Gas Bill</button>
+    <div class="content2">
+      <p>Reducing your gas consumption by limiting usage of stoves unnecessary as well as heaters. Wear a sweater instead of turning on the heater and increasing carbon emission</p>
+    </div>
+    
+    <button class="collapsible">Oil Bill</button>
+    <div class="content2">
+      <p>Reducing your oil usage can greatly decrease your carbon footprint and make the world a safer place for you and your community</p>
+    </div>
+
+    <button class="collapsible">Yearly Mileage Bill</button>
+    <div class="content2">
+      <p>You can reduce your yearly mileage bill by limiting private transportation and using public transportation when possible. Public transportation can transport more poeple with the same amount of gas and mileage and can greatly improve the environment</p>
+    </div>
+
+    <button class="collapsible">Paper Recycle</button>
+    <div class="content2">
+      <p>You do recycle paper. </p>
+    </div>
+
+    <button class="collapsible">Aluminum Tin Recycle</button>
+    <div class="content2">
+      <p>You do recycle tin</p>
+    </div>
+    
+    
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+    
+    </body>
+    </html>
+    
+
+
+    
+        
+    
+
+    
+
+
+
+   
+</div>
+<script>
+
+</script>
+<style>
+    
+
+</style>
+{% endblock %}
+

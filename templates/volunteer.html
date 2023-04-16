@@ -1,0 +1,145 @@
+{% extends "base.html" %} {% block content3 %} 
+<div class="content">
+    <!-- nav bar -->
+    <div>
+        <nav class="section-box-horizontal">
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/">Carbon Emission Calculator</a>
+            </div>
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/contributions">Individual Contribution</a>
+            </div>
+            <div class="navbar-item center border-rad">
+                <a class="navlink fontsize1" href="/volunteer">Volunteer and Petition</a>
+            </div>
+        </nav>
+    </div>
+    <!-- image 1 slide -->
+    <div class="section-box-horizontal">
+        <div style="width:50%; height: 300px;" class="image1"> 
+        </div>
+        <div style="width:48%; height: 300px;" class="center"> 
+            <h2 class="fontsize3 bold">Help out in your community</h2>
+        </div>
+    </div>
+    <br>
+    <!-- learn about carbon emissions -->
+    <div style="height: 100px; background-color: black; color:white;" class="section-box">
+        <h2 class="fontsize2 bold">Find opportunities near you.</h2>
+    </div>
+    <br>
+    <div id="add-volunteer" class="section-box">
+    </div>
+    <br>
+    <div style="height: 100px; background-color: black; color:white;" class="section-box">
+      <h2 class="fontsize2 bold">Create your own volunteering page.</h2>
+    </div>
+    <br>
+    <form class="row g-3" id="volunteer-form">
+        <div class="col-md-12">
+            <label for="inputTitle">Title</label>
+            <input type="text" class="form-control" id="inputTitle">
+          </div>
+        <div class="col-md-6">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" id="inputEmail">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPhoneNumber">Phone Number</label>
+          <input type="number" class="form-control" id="inputPhoneNumber">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="col-12">
+          <label for="inputBody">Description</label>
+          <textarea class="form-control" id="inputBody" rows="3" placeholder="describe what volunteers will be doing"></textarea>
+        </div>
+        <div class="col-md-6">
+          <label for="inputDate">Date</label>
+          <input type="text" class="form-control" id="inputDate">
+        </div>
+        <div class="col-md-4">
+          <label for="inputTime">Time</label>
+          <input type="text" class="form-control" id="inputTime">
+        </div>
+        <div class="col-md-2">
+            <label for="inputVolunteers">Max Volunters</label>
+            <input type="number" class="form-control" id="inputVolunteers">
+          </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Create Post</button>
+        </div>
+      </form>
+</div>
+
+<script>
+    class ClassVolunteers {
+    constructor(title, email, phone_number, address, description, date, time, volunteers) {
+        this.title = title
+        this.email = email;
+        this.phone_number = phone_number;
+        this.address = address;
+        this.description = description;
+        this.date = date;
+        this.time = time;
+        this.volunteers = volunteers;
+        }
+    }
+
+    var a = []
+
+    let fd= document.getElementById("volunteer-form")
+    fd.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let title = document.getElementById("inputTitle").value;
+        let email = document.getElementById("inputEmail").value;
+        let phone_number = document.getElementById("inputPhoneNumber").value;
+        let address = document.getElementById("inputAddress").value;
+        let description = document.getElementById("inputBody").value;
+        let date = document.getElementById("inputDate").value;
+        let time = document.getElementById("inputTime").value;
+        let volunteers = document.getElementById("inputVolunteers").value;
+        
+        let b = new ClassVolunteers(title, email, phone_number, address, description, date, time, volunteers)
+        a.push(b)
+        loadBlogs()
+    })
+
+    function loadBlogs(){
+        for (let i = 0; i < a.length; i++){
+          let add_volunteer = document.getElementById("add-volunteer");
+          let div = document.createElement('div');
+          div.className = "card"
+
+          let text1 = document.createElement("h2");
+          text1.innerHTML = a[i].title;
+          text1.className = "fontsize3"
+
+          let text2 = document.createElement("h2");
+          text2.innerHTML = a[i].date + ", " + a[i].time + ", " + a[i].address
+          text2.className = "fontsize2"
+
+          let div2 = document.createElement('div');
+          div2.className = "fat"
+          let p1 = document.createElement('p');
+          p1.innerHTML = a[i].description
+          p1.innerHTML += ("(Volunteers Needed: " + a[i].volunteers + ")")
+          p1.className = "fontsize1"
+          div2.appendChild(p1)
+
+          let text3 = document.createElement("h2");
+          text3.innerHTML = "Contact Me: " + a[i].phone_number + ", " + a[i].email
+          text3.className = "fontsize1"
+
+          div.appendChild(text1);
+          div.appendChild(text2);
+          div.appendChild(div2);
+          div.appendChild(text3);
+          add_volunteer.appendChild(div);
+        }
+
+    }
+</script>
+{% endblock %}
